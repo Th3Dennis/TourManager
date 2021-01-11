@@ -1,0 +1,48 @@
+Android Application
+
+
+Gefahrene Routen mit dem Motorrad oder Velo eintragen und speichern. Die insgesamt gefahrenen Kilometer werden zusammengezählt und ausgegeben. 
+
+
+Pro Card:
+
+Bild
+Titel
+Description
+Gefahrene Strecke
+
+
+Output: Insgesamt gefahrene Strecken, Liste aller Routen, Routen planen
+
+
+
+Use Cases:
+
+Der Benutzer kann neue Strecken erstellen, um diese zu speichern.
+Der Benutzer kann die gefahrenen Kilometer eitragen, um diese in der Card zu speichern.
+Der Benutzer bekommt eine Übersicht, um alle Strecken zu sehen.
+Der Benutzer bekommt eine Kilometerzahl, um seine insgesamt gefahrenen Kilometer zu sehen.
+
+
+
+Design Diagram
+
+Overview Activity, Card fragment
+TourPlaner Activity
+
+Design on Figma
+
+
+Timetable:
+07.12.2020: Think about what to do, Project idea found
+14.12.2020: Creating a Mockup with a modern Design
+04.01.2020: Working on the Project (Creating GUI, XML)
+11.01.2020: Working on the Project (Creating Database)
+18.01.2020: Working on the Project (Creating the RecyclerView with Tour Fragment, Finish Project)
+
+
+
+
+
+
+

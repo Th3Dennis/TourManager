@@ -17,4 +17,5 @@
     <string name="create_tour_description">Beschreibung</string>
     <string name="create_tour_weather">auswählen</string>
     <string name="create_tour_zero">0</string>
+    <string name="Home_title">Meine Touren</string>
 </resources>

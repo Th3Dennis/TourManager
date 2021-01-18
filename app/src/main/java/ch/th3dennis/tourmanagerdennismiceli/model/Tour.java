@@ -22,6 +22,8 @@ public class Tour {
     @NonNull
     private String title;
 
+    private String location;
+
     private Integer distance;
 
     private Integer days;
@@ -33,13 +35,22 @@ public class Tour {
     private String description;
 
 
-    public Tour(@NonNull String title, Integer distance, Integer days, String weather, Date date, String description) {
+    public Tour(@NonNull String title, String location, Integer distance, Integer days, String weather, Date date, String description) {
         this.title = title;
+        this.location = location;
         this.distance = distance;
         this.days = days;
         this.weather = weather;
         this.date = date;
         this.description = description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Integer getId() {

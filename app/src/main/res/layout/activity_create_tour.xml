@@ -42,11 +42,10 @@
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:hint="@string/create_tour_titel"
+                    android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    android:textColorHint="#BE000000"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
                 <EditText
                     android:id="@+id/create_tour_location"
@@ -58,7 +57,6 @@
                     android:hint="@string/create_tour_location"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    android:textColorHint="#BE000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/create_tour_titel" />
 
@@ -69,10 +67,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:ems="10"
-                    android:hint="@string/create_tour_zero"
+                    android:hint="@string/create_tour_days"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    android:textColorHint="#BE000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/create_tour_distance" />
 
@@ -83,10 +80,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:ems="10"
-                    android:hint="@string/create_tour_zero"
+                    android:hint="@string/create_tour_distance"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    android:textColorHint="#BE000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/create_tour_location" />
 
@@ -100,7 +96,6 @@
                     android:hint="@string/create_tour_weather"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    android:textColorHint="#BE000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/create_tour_days" />
 
@@ -125,10 +120,22 @@
                     android:layout_marginTop="24dp"
                     android:ems="10"
                     android:gravity="start|top"
+                    android:hint="@string/create_tour_description"
+                    android:importantForAutofill="no"
                     android:inputType="textMultiLine"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/create_tour_date"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toBottomOf="@+id/create_tour_date" />
+
+                <Button
+                    android:id="@+id/create_tour_save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/save"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/create_tour_description" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

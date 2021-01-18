@@ -8,10 +8,10 @@ import androidx.room.RoomDatabase;
 
 import ch.th3dennis.tourmanagerdennismiceli.model.Tour;
 
-@Database(entities = {Tour.class}, version = 1)
+@Database(entities = {Tour.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DB_NAME = "InvistDB";
+    private static final String DB_NAME = "TourDB";
     private static AppDatabase appdb;
 
     /**
@@ -30,5 +30,5 @@ public abstract class AppDatabase extends RoomDatabase {
         return appdb;
     }
 
-    public abstract TourDao getUserDao();
+    public abstract TourDao getTourDao();
 }

@@ -11,11 +11,14 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="create_tour_image_description">Beispielbild</string>
     <string name="create_tour_titel">Titel einfügen</string>
-    <string name="create_tour_location">Standort auswählen</string>
+    <string name="create_tour_location">Startort auswählen</string>
     <string name="create_tour_details">Details</string>
     <string name="create_tour_date">date</string>
     <string name="create_tour_description">Beschreibung</string>
-    <string name="create_tour_weather">auswählen</string>
+    <string name="create_tour_weather">Wetter angeben</string>
+    <string name="create_tour_days">Anzahl Tage</string>
     <string name="create_tour_zero">0</string>
+    <string name="create_tour_distance">Distanz</string>
     <string name="Home_title">Meine Touren</string>
+    <string name="save">Speichern</string>
 </resources>

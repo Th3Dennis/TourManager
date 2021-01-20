@@ -1,8 +1,8 @@
 package ch.th3dennis.tourmanagerdennismiceli.model;
 
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
@@ -10,7 +10,9 @@ import java.util.Date;
 
 import ch.th3dennis.tourmanagerdennismiceli.persistence.Converters;
 
-
+/**
+ * Business Object to create a table in the database
+ */
 @Entity(tableName = "tours")
 @TypeConverters(Converters.class)
 public class Tour {
@@ -44,6 +46,14 @@ public class Tour {
         this.date = date;
         this.description = description;
     }
+
+    @Ignore
+    public Tour(@NonNull String title) {
+        this.title = title;
+    }
+
+
+    //Getters and Setters
 
     public String getLocation() {
         return location;

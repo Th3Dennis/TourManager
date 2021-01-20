@@ -1,5 +1,8 @@
 package ch.th3dennis.tourmanagerdennismiceli.CardView;
 
+/**
+ * Model for the CardView
+ */
 public class CardViewModel {
 
     private String title, description;

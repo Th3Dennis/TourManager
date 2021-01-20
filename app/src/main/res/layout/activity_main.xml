@@ -24,11 +24,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/Home_title"
         android:textColor="@color/modern_black"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/drivenKilometers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="105dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/driven_kilometers"
+        android:textColor="@color/modern_light_black"
+        android:textSize="14sp" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

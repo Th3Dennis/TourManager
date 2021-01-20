@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 import ch.th3dennis.tourmanagerdennismiceli.R;
 
+/**
+ * Adapter to create a ViewHolder
+ */
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
 
     Context c;
@@ -23,6 +26,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         this.models = models;
     }
 
+    /**
+     * Inflates the holder
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,6 +42,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         return new MyHolder(view);
     }
 
+    /**
+     * Binds the elements to the Cards
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
@@ -41,6 +57,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
 
     }
 
+    /**
+     * @return size of the Arraylist
+     */
     @Override
     public int getItemCount() {
         return models.size();

@@ -17,6 +17,7 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     private MyAdapter myAdapter;
 
 
+    /**
+     * The Method that gets called, when this Activity is first shown
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
                 openCreateTourActivity();
             }
         });
+
+        //insertDummies();
     }
 
+    /**
+     * The Method that gets called, when this Activity is shown first or again
+     */
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onResume() {
         super.onResume();
@@ -65,8 +76,25 @@ public class MainActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(this, getMyList());
         recyclerView.setAdapter(myAdapter);
 
+
+        TextView kilometersTextView = findViewById(R.id.drivenKilometers);
+
+        List<Tour> tours = tourDao.getAll();
+
+        double drivenKilometers = 0;
+
+        for (Tour tour : tours){
+            drivenKilometers += tour.getDistance();
+        }
+
+
+        kilometersTextView.setText(getApplicationContext().getString(R.string.driven_kilometers) + " " + drivenKilometers);
     }
 
+    /**
+     * Method to get all Cards from the Database
+     * @return
+     */
     private ArrayList<CardViewModel> getMyList(){
         ArrayList<CardViewModel> models = new ArrayList<>();
 
@@ -84,74 +112,67 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Method to fill in Dummy data
+     *
+     */
+    private void insertDummies(){
+        ArrayList<Tour> tours = new ArrayList<>();
 
-    private ArrayList<CardViewModel> getMyDummyList(){
-       ArrayList<CardViewModel> models = new ArrayList<>();
-
-       CardViewModel m = new CardViewModel();
-       m.setTitle("Test Titel");
-       m.setDescription("Dies ist eine Test Beschreibung");
-       m.setImg(R.drawable.motorcycle_picture_square);
-       models.add(m);
-
-        CardViewModel m1 = new CardViewModel();
-        m1.setTitle("Test Titel1");
-        m1.setDescription("Dies ist eine Test Beschreibung");
-        m1.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m1);
-
-        CardViewModel m2 = new CardViewModel();
-        m2.setTitle("Test Titel2");
-        m2.setDescription("Dies ist eine Test Beschreibung");
-        m2.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m2);
-
-        CardViewModel m3 = new CardViewModel();
-        m3.setTitle("Test Titel3");
-        m3.setDescription("Dies ist eine Test Beschreibung");
-        m3.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m3);
-
-        CardViewModel m4 = new CardViewModel();
-        m4.setTitle("Test Titel4");
-        m4.setDescription("Dies ist eine Test Beschreibung");
-        m4.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m4);
-
-        CardViewModel m5 = new CardViewModel();
-        m5.setTitle("Test Titel5");
-        m5.setDescription("Dies ist eine Test Beschreibung");
-        m5.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m5);
-
-        CardViewModel m6 = new CardViewModel();
-        m6.setTitle("Test Titel6");
-        m6.setDescription("Dies ist eine Test Beschreibung");
-        m6.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m6);
-
-        CardViewModel m7 = new CardViewModel();
-        m7.setTitle("Test Titel7");
-        m7.setDescription("Dies ist eine Test Beschreibung");
-        m7.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m7);
-
-        CardViewModel m8 = new CardViewModel();
-        m8.setTitle("Test Titel8");
-        m8.setDescription("Dies ist eine Test Beschreibung");
-        m8.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m8);
-
-        CardViewModel m9 = new CardViewModel();
-        m9.setTitle("Test Titel9");
-        m9.setDescription("Dies ist eine Test Beschreibung");
-        m9.setImg(R.drawable.motorcycle_picture_square);
-        models.add(m9);
+        Tour tour = new Tour("Schwyz Tour");
+        tour.setDescription("Tour um Schwyz");
+        tour.setDistance(60);
+        tours.add(tour);
 
 
-       return models;
+        Tour tour1 = new Tour("Obersee Tour");
+        tour1.setDescription("Eine Rundfahrt mit der Yamaha MT-125 um den Obersee");
+        tour1.setDistance(30);
+        tours.add(tour1);
+
+
+
+        Tour tour2 = new Tour("Graubünden Pässe Tour");
+        tour2.setDescription("3 Pässe Tour in Graubünden");
+        tour2.setDistance(80);
+        tours.add(tour2);
+
+
+
+        Tour tour3 = new Tour("Deutschland Tour");
+        tour3.setDescription("Eine Tour nach München und zurück");
+        tour3.setDistance(400);
+        tours.add(tour3);
+
+
+
+        Tour tour4 = new Tour("Einsiedeln Tour");
+        tour4.setDescription("Mit schönem Wetter über die Sattelegg nach Einsiedeln");
+        tour4.setDistance(20);
+        tours.add(tour4);
+
+        Tour tour5 = new Tour("Zürichsee Tour");
+        tour5.setDescription("Eine Tour um den Zürichsee mit schönem warmen Wetter");
+        tour5.setDistance(80);
+        tours.add(tour5);
+
+
+        Tour tour6 = new Tour("Furka Pass");
+        tour6.setDescription("Eine Tour über den Furka Pass");
+        tour6.setDistance(200);
+        tours.add(tour6);
+
+
+        tourDao.insertTours(tours);
+
     }
 
+
+    /**
+     * Inflates the menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -159,6 +180,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Made by Android, when the item is selected
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -174,6 +200,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Method to switch to the CreateTourActivity
+     */
     private void openCreateTourActivity() {
         Log.i(TAG, "Open the HomeActivity");
         //Change to Home-Activity
@@ -181,6 +210,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(createTourActivityIntent);
     }
 
+    /**
+     * Debug method to print out the Database
+     */
     private void printDataBase(){
         List<Tour> tourList = tourDao.getAll();
 

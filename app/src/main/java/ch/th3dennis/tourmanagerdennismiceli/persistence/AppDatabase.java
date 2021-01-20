@@ -8,6 +8,9 @@ import androidx.room.RoomDatabase;
 
 import ch.th3dennis.tourmanagerdennismiceli.model.Tour;
 
+/**
+ * Class to create the SQLite database
+ */
 @Database(entities = {Tour.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
 

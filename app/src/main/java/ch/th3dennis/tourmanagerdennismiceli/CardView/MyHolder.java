@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ch.th3dennis.tourmanagerdennismiceli.R;
 
+/**
+ * Holder Class for the CardView
+ */
 public class MyHolder extends RecyclerView.ViewHolder {
 
     ImageView mImageView;

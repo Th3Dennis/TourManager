@@ -20,6 +20,10 @@ public class CreateTourActivity extends AppCompatActivity {
     private static final String TAG = "ch.th3dennis.tourmanagerdennismiceli.CreateTourActivity";
     private TourDao tourDao;
 
+    /**
+     * The Method that gets called, when this Activity is first shown
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,22 +41,11 @@ public class CreateTourActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        addTestData();
-    }
 
-    private void addTestData() {
-        //tourDao.insertTour(new Tour("New Tour",56,1, "good", new Date(2020,7,2), "Test Description"));
-        //Log.d(TAG, "addTestData: Added a test tour to the database");
-        List<Tour> tours = tourDao.getAll();
-
-        for (Tour tour : tours) {
-            Log.i(TAG, tour.getId() + " " + tour.getTitle());
-        }
-    }
-
+    /**
+     * Saves all the data typed in to the database
+     * @return
+     */
     private boolean saveData() {
         EditText titleEditText = findViewById(R.id.create_tour_titel);
         EditText locationEditText = findViewById(R.id.create_tour_location);
@@ -84,6 +77,12 @@ public class CreateTourActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Converter from String to date
+     * @param date used to convert
+     * @return {@Link Date}
+     * @throws WrongDateFormatException Exception created by Dennis gets thrown
+     */
     private Date getDateFromString(String date) throws WrongDateFormatException {
         String[] strings = date.split("\\.");
         if (strings.length != 3) {

@@ -1,7 +1,7 @@
 Android Application
 
 
-Gefahrene Routen mit dem Motorrad oder Velo eintragen und speichern. Die insgesamt gefahrenen Kilometer werden zusammengezählt und ausgegeben. 
+Gefahrene Routen mit dem Motorrad oder Velo eintragen und speichern. Die insgesamt gefahrenen Kilometer werden zusammengezÃ¤hlt und ausgegeben. 
 
 
 Pro Card:
@@ -20,7 +20,7 @@ Use Cases:
 
 Der Benutzer kann neue Strecken erstellen, um diese zu speichern.
 Der Benutzer kann die gefahrenen Kilometer eitragen, um diese in der Card zu speichern.
-Der Benutzer bekommt eine Übersicht, um alle Strecken zu sehen.
+Der Benutzer bekommt eine Ãœbersicht, um alle Strecken zu sehen.
 Der Benutzer bekommt eine Kilometerzahl, um seine insgesamt gefahrenen Kilometer zu sehen.
 
 

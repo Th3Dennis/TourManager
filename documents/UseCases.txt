@@ -39,6 +39,7 @@ Timetable:
 04.01.2020: Working on the Project (Creating GUI, XML)
 11.01.2020: Working on the Project (Creating Database, working on XML)
 18.01.2020: Working on the Project (Creating the RecyclerView, Finish Project)
+20.01.2020: Create all JavaDoc Comments, Create Class Diagram
 
 
 

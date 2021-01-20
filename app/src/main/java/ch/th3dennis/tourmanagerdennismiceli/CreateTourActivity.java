@@ -83,7 +83,7 @@ public class CreateTourActivity extends AppCompatActivity {
      * @return {@Link Date}
      * @throws WrongDateFormatException Exception created by Dennis gets thrown
      */
-    private Date getDateFromString(String date) throws WrongDateFormatException {
+    public Date getDateFromString(String date) throws WrongDateFormatException {
         String[] strings = date.split("\\.");
         if (strings.length != 3) {
             throw new WrongDateFormatException("Wrong Date format used");
